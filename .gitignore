@@ -1,0 +1,4 @@
+chart/templates/clusterrole.yaml
+chart/templates/clusterrolebinding.yaml
+chart/templates/role.yaml
+chart/templates/rolebinding.yaml
