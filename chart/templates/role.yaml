@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ include "finops-operator-exporter-chart.fullname" . }}-leader-election-role
+  name: {{ include "finops-operator-exporter-chart.fullname" . }}-leader-election
   labels:
     app.kubernetes.io/component: rbac
     app.kubernetes.io/created-by: operator-exporter
@@ -43,7 +43,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ include "finops-operator-exporter-chart.fullname" . }}-manager-role
+  name: {{ include "finops-operator-exporter-chart.fullname" . }}-manager
   labels:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 rules:
@@ -122,7 +122,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ include "finops-operator-exporter-chart.fullname" . }}-proxy-role
+  name: {{ include "finops-operator-exporter-chart.fullname" . }}-proxy
   labels:
     app.kubernetes.io/component: kube-rbac-proxy
     app.kubernetes.io/created-by: operator-exporter
@@ -145,7 +145,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ include "finops-operator-exporter-chart.fullname" . }}-db-config-getter-role
+  name: {{ include "finops-operator-exporter-chart.fullname" . }}-db-config-getter
   labels:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 rules:
@@ -160,7 +160,7 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ include "finops-operator-exporter-chart.fullname" . }}-role
+  name: {{ include "finops-operator-exporter-chart.fullname" . }}
   labels:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 rules:
