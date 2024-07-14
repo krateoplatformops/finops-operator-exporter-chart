@@ -25,7 +25,12 @@ spec:
               notebookPath:
                 type: string
               token:
-                type: string
+                type: object
+                properties:
+                  name: 
+                    type: string
+                  namespace:
+                    type: string
             required:
             - host
             - token
