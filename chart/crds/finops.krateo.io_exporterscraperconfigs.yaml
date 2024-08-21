@@ -1,3 +1,4 @@
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -46,6 +47,20 @@ spec:
                       type: string
                     type: object
                   authenticationMethod:
+                    pattern: ^(\bcert-file\b)|(\bbearer-token\b)$
+                    type: string
+                  bearerToken:
+                    properties:
+                      name:
+                        type: string
+                      namespace:
+                        type: string
+                    required:
+                    - name
+                    - namespace
+                    type: object
+                  metricType:
+                    pattern: ^(\b[Cc]ost\b)|(\b[Rr]esource\b)$
                     type: string
                   pollingIntervalHours:
                     type: integer
