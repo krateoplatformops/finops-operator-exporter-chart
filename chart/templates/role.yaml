@@ -172,3 +172,10 @@ rules:
   - get
   - list
   - create
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+
