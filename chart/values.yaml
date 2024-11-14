@@ -104,6 +104,7 @@ exporterscraperConfigGetterSa:
 imagePullSecrets: 
   - name: registry-credentials
 
-operatorExporterRepoEnvvarConfigmapExporter:
-  repo: ghcr.io/krateoplatformops
+env:
+  REGISTRY: ghcr.io/krateoplatformops
+  REGISTRY_CREDENTIALS: registry-credentials
 
