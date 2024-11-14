@@ -20,18 +20,9 @@ spec:
             spec:
               type: object
               properties:
-                usernameSecretRef: 
-                  type: object
-                  properties:
-                    name: 
-                      type: string
-                      nullable: false
-                    namespace:
-                      type: string
-                      nullable: false
-                    key:
-                      type: string
-                      nullable: false
+                username: 
+                  type: string
+                  nullable: false
                 passwordSecretRef: 
                   type: object
                   properties:
@@ -45,7 +36,7 @@ spec:
                       type: string
                       nullable: false
               required:
-                - usernameSecretRef
+                - username
                 - passwordSecretRef
   # either Namespaced or Cluster
   scope: Namespaced

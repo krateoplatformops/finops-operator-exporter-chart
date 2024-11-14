@@ -98,6 +98,9 @@ spec:
                 type: object
               scraperConfig:
                 properties:
+                  metricType:
+                    default: cost
+                    type: string
                   pollingIntervalHours:
                     type: integer
                   scraperDatabaseConfigRef:
@@ -311,3 +314,4 @@ spec:
     storage: true
     subresources:
       status: {}
+
