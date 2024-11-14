@@ -5,5 +5,5 @@ metadata:
   labels:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 data:
-  REPO: {{ .Values.operatorExporterRepoEnvvarConfigmapExporter.repo | quote
-    }}
+  REGISTRY: {{ .Values.env.REGISTRY | quote }}
+  REGISTRY_CREDENTIALS: {{ .Values.env.REGISTRY_CREDENTIALS | quote }}
