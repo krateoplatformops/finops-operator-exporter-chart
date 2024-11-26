@@ -53,6 +53,7 @@ rules:
   - deployments
   verbs:
   - create
+  - delete
   - get
   - list
   - update
@@ -63,6 +64,7 @@ rules:
   - configmaps
   verbs:
   - create
+  - delete
   - get
   - list
   - update
@@ -72,6 +74,7 @@ rules:
   - services
   verbs:
   - create
+  - delete
   - get
   - list
   - update
