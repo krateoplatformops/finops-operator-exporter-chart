@@ -107,4 +107,6 @@ imagePullSecrets:
 env:
   REGISTRY: ghcr.io/krateoplatformops
   REGISTRY_CREDENTIALS: registry-credentials
+  POLLING_INTERVAL: 300
+  MAX_RECONCILE_RATE: 1
 
