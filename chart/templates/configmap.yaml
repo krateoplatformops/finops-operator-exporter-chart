@@ -5,7 +5,6 @@ metadata:
   labels:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 data:
-  REGISTRY: {{ .Values.env.REGISTRY | quote }}
-  REGISTRY_CREDENTIALS: {{ .Values.env.REGISTRY_CREDENTIALS | quote }}
-  POLLING_INTERVAL: "{{ .Values.env.POLLING_INTERVAL }}"
-  MAX_RECONCILE_RATE: "{{ .Values.env.MAX_RECONCILE_RATE }}"
+  {{- range $key, $value := .Values.env }}
+  {{ $key }}: {{ $value | quote }}
+  {{- end }} 
