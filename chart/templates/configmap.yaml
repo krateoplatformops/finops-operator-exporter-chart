@@ -5,5 +5,6 @@ metadata:
   labels:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 data:
-  REGISTRY: {{ .Values.env.REGISTRY | quote }}
-  REGISTRY_CREDENTIALS: {{ .Values.env.REGISTRY_CREDENTIALS | quote }}
+  {{- range $key, $value := .Values.env }}
+  {{ $key }}: {{ $value | quote }}
+  {{- end }} 
