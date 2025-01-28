@@ -3,9 +3,6 @@ kind: Role
 metadata:
   name: {{ include "finops-operator-exporter-chart.fullname" . }}-leader-election
   labels:
-    app.kubernetes.io/component: rbac
-    app.kubernetes.io/created-by: operator-exporter
-    app.kubernetes.io/part-of: operator-exporter
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 rules:
 - apiGroups:
