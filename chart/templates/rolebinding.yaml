@@ -10,7 +10,7 @@ roleRef:
   name: '{{ include "finops-operator-exporter-chart.fullname" . }}-leader-election'
 subjects:
 - kind: ServiceAccount
-  name: '{{ include "finops-operator-exporter-chart.fullname" . }}-controller-manager'
+  name: {{ include "finops-operator-exporter-chart.serviceAccountName" . }}
   namespace: '{{ .Release.Namespace }}'
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -25,7 +25,7 @@ roleRef:
   name: '{{ include "finops-operator-exporter-chart.fullname" . }}-manager'
 subjects:
 - kind: ServiceAccount
-  name: '{{ include "finops-operator-exporter-chart.fullname" . }}-controller-manager'
+  name: {{ include "finops-operator-exporter-chart.serviceAccountName" . }}
   namespace: '{{ .Release.Namespace }}'
 ---
 apiVersion: rbac.authorization.k8s.io/v1
