@@ -45,6 +45,19 @@ metadata:
   {{- include "finops-operator-exporter-chart.labels" . | nindent 4 }}
 rules:
 - apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  - services
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - update
+  - watch
+- apiGroups:
   - apps
   resources:
   - deployments
@@ -56,30 +69,10 @@ rules:
   - update
   - watch
 - apiGroups:
-  - ""
-  resources:
-  - configmaps
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - update
-- apiGroups:
-  - ""
-  resources:
-  - services
-  verbs:
-  - create
-  - delete
-  - get
-  - list
-  - update
-  - watch
-- apiGroups:
   - finops.krateo.io
   resources:
   - databaseconfigs
+  - scraperconfigs
   verbs:
   - create
   - get
@@ -109,14 +102,6 @@ rules:
   verbs:
   - get
   - patch
-  - update
-- apiGroups:
-  - finops.krateo.io
-  resources:
-  - scraperconfigs
-  verbs:
-  - create
-  - get
   - update
 ---
 apiVersion: rbac.authorization.k8s.io/v1
