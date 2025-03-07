@@ -79,8 +79,9 @@ spec:
                     default: cost
                     pattern: ^(\b[Cc]ost\b)|(\b[Rr]esource\b)$
                     type: string
-                  pollingIntervalHours:
-                    type: integer
+                  pollingInterval:
+                    format: duration
+                    type: string
                   provider:
                     properties:
                       name:
@@ -92,7 +93,7 @@ spec:
                     - namespace
                     type: object
                 required:
-                - pollingIntervalHours
+                - pollingInterval
                 type: object
               scraperConfig:
                 properties:
@@ -129,8 +130,9 @@ spec:
                   metricType:
                     default: cost
                     type: string
-                  pollingIntervalHours:
-                    type: integer
+                  pollingInterval:
+                    format: duration
+                    type: string
                   scraperDatabaseConfigRef:
                     properties:
                       name:
@@ -144,7 +146,7 @@ spec:
                   tableName:
                     type: string
                 required:
-                - pollingIntervalHours
+                - pollingInterval
                 - scraperDatabaseConfigRef
                 - tableName
                 type: object
@@ -368,4 +370,4 @@ spec:
     served: true
     storage: true
     subresources:
-      status: {}
+      status: {}  
