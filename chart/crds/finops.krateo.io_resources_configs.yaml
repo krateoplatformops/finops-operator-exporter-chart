@@ -121,12 +121,38 @@ spec:
                 endpoint:
                   type: object
                   properties:
-                    resourcePrefix:
-                      type: string
+                    resourcePrefixAPI:
+                      description: resourcePrefixAPI represents a request to an HTTP service
+                      properties:
+                        endpointRef:
+                          description: EndpointRef a reference to an Endpoint
+                          properties:
+                            name:
+                              type: string
+                            namespace:
+                              type: string
+                          required:
+                          - name
+                          - namespace
+                          type: object
+                        headers:
+                          description: Headers is an array of custom request headers
+                          items:
+                            type: string
+                          type: array
+                          x-kubernetes-list-type: atomic
+                        path:
+                          description: Path is the request URI path
+                          type: string
+                        payload:
+                          description: Payload is the request body
+                          type: string
+                        verb:
+                          description: Verb is the request method (GET if omitted)
+                          type: string
+                      type: object
                     resourceSuffix:
                       type: string
-                  required:
-                  - resourcePrefix
                 metricName:
                   type: string
                 timespan:
