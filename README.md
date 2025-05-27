@@ -5,7 +5,7 @@ This is a [Helm Chart](https://helm.sh/docs/topics/charts/) for [Krateo FinOps O
 ## How to install
 
 ```sh
-$ helm repo add krateo https://charts.krateo.io
-$ helm repo update krateo
-$ helm install finops-operator-exporter krateo/finops-operator-exporter
+helm repo add krateo https://charts.krateo.io
+helm repo update krateo
+helm install finops-operator-exporter krateo/finops-operator-exporter
 ```
