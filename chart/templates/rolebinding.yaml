@@ -37,7 +37,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: {{ include "finops-operator-exporter-chart.fullname" . }} #'{{ include "finops-operator-exporter-chart.fullname" . }}-db-config-getter-role'
+  name: '{{ include "finops-operator-exporter-chart.fullname" . }}-db-config-getter'
 subjects:
 - kind: ServiceAccount
   name: db-config-getter-sa
