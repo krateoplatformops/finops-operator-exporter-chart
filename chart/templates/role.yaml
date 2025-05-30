@@ -115,6 +115,7 @@ rules:
   - finops.krateo.io
   resources:
   - databaseconfigs
+  - focusconfigs
   verbs:
   - get
   - list
