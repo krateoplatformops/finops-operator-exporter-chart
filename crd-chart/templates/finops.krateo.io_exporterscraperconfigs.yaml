@@ -75,9 +75,19 @@ spec:
                         description: Verb is the request method (GET if omitted)
                         type: string
                     type: object
+                  generic:
+                    properties:
+                      metricName:
+                        type: string
+                      valueColumnIndex:
+                        type: integer
+                    required:
+                    - metricName
+                    - valueColumnIndex
+                    type: object
                   metricType:
                     default: cost
-                    pattern: ^(\b[Cc]ost\b)|(\b[Rr]esource\b)$
+                    pattern: ^(\b[Cc]ost\b)|(\b[Rr]esource\b)|(\b[gG]eneric\b)$
                     type: string
                   pollingInterval:
                     format: duration
@@ -126,6 +136,16 @@ spec:
                       verb:
                         description: Verb is the request method (GET if omitted)
                         type: string
+                    type: object
+                  generic:
+                    properties:
+                      metricName:
+                        type: string
+                      valueColumnIndex:
+                        type: integer
+                    required:
+                    - metricName
+                    - valueColumnIndex
                     type: object
                   metricType:
                     default: cost
@@ -370,4 +390,4 @@ spec:
     served: true
     storage: true
     subresources:
-      status: {}  
+      status: {}
